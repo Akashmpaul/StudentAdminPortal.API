@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using StudentAdminPortal.API.Repositories;
 
 namespace StudentAdminPortal.API.Controllers
 {
@@ -7,5 +8,13 @@ namespace StudentAdminPortal.API.Controllers
     [ApiController]
     public class StudentController : ControllerBase
     {
+        private readonly IStudentRepository studentRepository;
+
+        public StudentController(IStudentRepository studentRepository)
+        {
+            this.studentRepository = studentRepository;
+        }
+
+
     }
 }
